@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F7875528-F8B2-4DF4-93D6-2954463AEE73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stone.Api.Contracheque.Domain", "src\Stone.Api.Contracheque.Domain\Stone.Api.Contracheque.Domain.csproj", "{7FCF3164-A3B8-496E-803B-22A8ABB13ABA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A50B8028-1EBB-42C1-A731-2B8EBAE20E29}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stone.Api.Contracheque.Tests", "Tests\Stone.Api.Contracheque.Tests\Stone.Api.Contracheque.Tests.csproj", "{0DCBBD82-F49D-439E-BEA9-F77FEDA7CE79}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{150131FB-936B-4665-B4BA-72AD09EE1406}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stone.Api.Contracheque.Repository", "src\Stone.Api.Contracheque.Repository\Stone.Api.Contracheque.Repository.csproj", "{F7A38C4D-C016-4F5E-9BED-96254AAEC062}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{E2660003-C775-4FCB-911D-E7A18B220428}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stone.Api.Contracheque.App", "src\Stone.Api.Contracheque.App\Stone.Api.Contracheque.App.csproj", "{DD0B6E63-8E1C-4C9B-AC11-D9D350E93623}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FCF3164-A3B8-496E-803B-22A8ABB13ABA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FCF3164-A3B8-496E-803B-22A8ABB13ABA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FCF3164-A3B8-496E-803B-22A8ABB13ABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FCF3164-A3B8-496E-803B-22A8ABB13ABA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DCBBD82-F49D-439E-BEA9-F77FEDA7CE79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DCBBD82-F49D-439E-BEA9-F77FEDA7CE79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DCBBD82-F49D-439E-BEA9-F77FEDA7CE79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DCBBD82-F49D-439E-BEA9-F77FEDA7CE79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7A38C4D-C016-4F5E-9BED-96254AAEC062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7A38C4D-C016-4F5E-9BED-96254AAEC062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7A38C4D-C016-4F5E-9BED-96254AAEC062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7A38C4D-C016-4F5E-9BED-96254AAEC062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD0B6E63-8E1C-4C9B-AC11-D9D350E93623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD0B6E63-8E1C-4C9B-AC11-D9D350E93623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD0B6E63-8E1C-4C9B-AC11-D9D350E93623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD0B6E63-8E1C-4C9B-AC11-D9D350E93623}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7FCF3164-A3B8-496E-803B-22A8ABB13ABA} = {F7875528-F8B2-4DF4-93D6-2954463AEE73}
+		{0DCBBD82-F49D-439E-BEA9-F77FEDA7CE79} = {A50B8028-1EBB-42C1-A731-2B8EBAE20E29}
+		{F7A38C4D-C016-4F5E-9BED-96254AAEC062} = {150131FB-936B-4665-B4BA-72AD09EE1406}
+		{DD0B6E63-8E1C-4C9B-AC11-D9D350E93623} = {E2660003-C775-4FCB-911D-E7A18B220428}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8B544B7-0157-4DB7-A565-84184BF48E9E}
+	EndGlobalSection
+EndGlobal
