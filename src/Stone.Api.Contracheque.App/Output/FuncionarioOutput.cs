@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Stone.Api.Contracheque.App.Inputs
+namespace Stone.Api.Contracheque.App.Outputs
 {
     public class FuncionarioOutput
     {

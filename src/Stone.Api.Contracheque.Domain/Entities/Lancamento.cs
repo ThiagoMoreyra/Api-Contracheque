@@ -9,7 +9,6 @@ namespace Stone.Api.Contracheque.Domain.Entities
         public string TipoLancamento { get; set; }
         public double Valor { get; set; }
         public string DescricaoLancamento { get; set; }
-        public Funcionario Funcionario { get; set; }
 
         public List<Lancamento> ObtemLancamentos(Funcionario funcionario)
         {

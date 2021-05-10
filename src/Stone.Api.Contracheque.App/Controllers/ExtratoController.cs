@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Stone.Api.Contracheque.App.AutoMapper;
 using Stone.Api.Contracheque.App.Filter;
 using Stone.Api.Contracheque.Domain.Shared.Interfaces;
 using Stone.Api.Contracheque.Domain.Shared.Notify;
@@ -25,7 +26,7 @@ namespace Stone.Api.Contracheque.App.Controllers
         {
             var extrato = _extratoService.ObtemExtrato(id);
             if (extrato is null) return BadRequest();
-            return CustomResponse(extrato);
+            return CustomResponse(extrato.ConverteParaExtratoOutput());
         }
     }
 }
