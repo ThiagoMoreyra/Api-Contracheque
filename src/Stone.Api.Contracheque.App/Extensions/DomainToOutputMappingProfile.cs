@@ -1,9 +1,8 @@
-﻿using Stone.Api.Contracheque.App.Inputs;
-using Stone.Api.Contracheque.App.Output;
+﻿using Stone.Api.Contracheque.App.Output;
 using Stone.Api.Contracheque.App.Outputs;
 using Stone.Api.Contracheque.Domain.Entities;
 
-namespace Stone.Api.Contracheque.App.AutoMapper
+namespace Stone.Api.Contracheque.App.Extensions
 {
     public static class DomainToOutputMappingProfile
     {
@@ -31,8 +30,8 @@ namespace Stone.Api.Contracheque.App.AutoMapper
                 Lancamentos = model.Lancamentos,
                 MesDeReferencia = model.MesDeReferencia,
                 SalarioBruto = model.Funcionario.SalarioBruto,
-                SalarioLiquido = model.SalarioLiquido,                
-                TotalDeDescontos = model.TotalDeDescontos,                
+                SalarioLiquido = model.SalarioLiquido,
+                TotalDeDescontos = model.TotalDeDescontos,
             };
         }
     }

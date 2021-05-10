@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Stone.Api.Contracheque.App.AutoMapper;
+using Stone.Api.Contracheque.App.Extensions;
 using Stone.Api.Contracheque.App.Filter;
 using Stone.Api.Contracheque.Domain.Shared.Interfaces;
 using Stone.Api.Contracheque.Domain.Shared.Notify;

@@ -2,7 +2,7 @@
 using Stone.Api.Contracheque.Domain.Entities;
 using Stone.Api.Contracheque.Domain.ValueObjects;
 
-namespace Stone.Api.Contracheque.App.AutoMapper
+namespace Stone.Api.Contracheque.App.Extensions
 {
     public static class InputToDomainMappingProfile
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Stone.Api.Contracheque.App.AutoMapper;
+using Stone.Api.Contracheque.App.Extensions;
 using Stone.Api.Contracheque.Domain.Services;
 using Stone.Api.Contracheque.Domain.Shared.Interfaces;
 using Stone.Api.Contracheque.Domain.Shared.Notify;
