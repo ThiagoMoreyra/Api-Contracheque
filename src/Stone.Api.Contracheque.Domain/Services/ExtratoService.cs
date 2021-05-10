@@ -20,7 +20,11 @@ namespace Stone.Api.Contracheque.Domain.Services
         {
             var funcionario = _funcionarioRepositorio.ObtemPorId(idFuncionario).Result;
 
-            if (funcionario is null) throw new ArgumentNullException(MensagensDeErro.FuncionarioNaoEncontrado);
+            if (funcionario is null)
+            {
+                _notificador.AdicionaNotificacao(MensagensDeErro.FuncionarioNaoEncontrado);
+                return new Extrato { };
+            }
 
             var lancamento = new Lancamento();
 

@@ -4,6 +4,7 @@ namespace Stone.Api.Contracheque.Domain.Entities
 {
     public class Extrato
     {
+        public Extrato() { }
         public Extrato(int mesDeReferencia, Funcionario funcionario, List<Lancamento> lancamentos)
         {
             MesDeReferencia = mesDeReferencia;

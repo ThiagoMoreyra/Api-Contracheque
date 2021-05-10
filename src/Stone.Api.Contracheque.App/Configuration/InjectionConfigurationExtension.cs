@@ -22,6 +22,7 @@ namespace Stone.Api.Contracheque.App.Configuration
 
             //Services
             services.AddScoped<IFuncionarioService, FuncionarioService>();
+            services.AddScoped<IExtratoService, ExtratoService>();
 
             //Repository
             services.AddScoped<IFuncionarioRepositorio, FuncionarioRepositorio>();
