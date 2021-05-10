@@ -6,9 +6,9 @@ namespace Stone.Api.Contracheque.Domain.Entities
 {
     public class Lancamento
     {
-        public TipoLancamento TipoLancamento { get; set; }
+        public string TipoLancamento { get; set; }
         public double Valor { get; set; }
-        public DescricaoLancamento DescricaoLancamento { get; set; }
+        public string DescricaoLancamento { get; set; }
         public Funcionario Funcionario { get; set; }
 
         public List<Lancamento> ObtemLancamentos(Funcionario funcionario)
@@ -20,6 +20,7 @@ namespace Stone.Api.Contracheque.Domain.Entities
             lancamentos.Add(ObtemLancamentoPlanoDeSaude(funcionario));
             lancamentos.Add(ObtemLancamentoPlanoDental(funcionario));
             lancamentos.Add(ObtemLancamentoValeTransporte(funcionario));
+            lancamentos.Add(ObtemLancamentoSalarioLiquido(funcionario));
 
             return lancamentos;
         }
@@ -30,8 +31,8 @@ namespace Stone.Api.Contracheque.Domain.Entities
         {
             return new Lancamento
             {
-                TipoLancamento = TipoLancamento.Desconto,
-                DescricaoLancamento = DescricaoLancamento.FGTS,
+                TipoLancamento = System.Enum.GetName(typeof(TipoLancamento), Enum.TipoLancamento.Desconto),
+                DescricaoLancamento = System.Enum.GetName(typeof(DescricaoLancamento), Enum.DescricaoLancamento.FGTS),
                 Valor = CalculadorDescontosAuxiliares.CalculaDescontoFGTS(funcionario.SalarioBruto),
             };
         }
@@ -40,8 +41,8 @@ namespace Stone.Api.Contracheque.Domain.Entities
         {
             return new Lancamento
             {
-                TipoLancamento = TipoLancamento.Desconto,
-                DescricaoLancamento = DescricaoLancamento.INSS,
+                TipoLancamento = System.Enum.GetName(typeof(TipoLancamento), Enum.TipoLancamento.Desconto),
+                DescricaoLancamento = System.Enum.GetName(typeof(DescricaoLancamento), Enum.DescricaoLancamento.INSS),
                 Valor = CalculadorDescontoAliquotaINSS.CalculaDescontoDeAliquotaINSS(funcionario.SalarioBruto),
             };
         }
@@ -50,8 +51,8 @@ namespace Stone.Api.Contracheque.Domain.Entities
         {
             return new Lancamento
             {
-                TipoLancamento = TipoLancamento.Desconto,
-                DescricaoLancamento = DescricaoLancamento.IRRF,
+                TipoLancamento = System.Enum.GetName(typeof(TipoLancamento), Enum.TipoLancamento.Desconto),
+                DescricaoLancamento = System.Enum.GetName(typeof(DescricaoLancamento), Enum.DescricaoLancamento.IRRF),
                 Valor = CalculadorIRRF.CalculaDescontoIRRF(funcionario.SalarioBruto),
             };
         }
@@ -60,8 +61,8 @@ namespace Stone.Api.Contracheque.Domain.Entities
         {
             return new Lancamento
             {
-                TipoLancamento = TipoLancamento.Desconto,
-                DescricaoLancamento = DescricaoLancamento.PlanoDeSaude,
+                TipoLancamento = System.Enum.GetName(typeof(TipoLancamento), Enum.TipoLancamento.Desconto),
+                DescricaoLancamento = System.Enum.GetName(typeof(DescricaoLancamento), Enum.DescricaoLancamento.PlanoDeSaude),
                 Valor = CalculadorDescontosAuxiliares.CalculaDescontoPlanoDeSaude(funcionario.PossuiDescontoPlanoDeSaude),
             };
         }
@@ -69,8 +70,8 @@ namespace Stone.Api.Contracheque.Domain.Entities
         {
             return new Lancamento
             {
-                TipoLancamento = TipoLancamento.Desconto,
-                DescricaoLancamento = DescricaoLancamento.PlanoDental,
+                TipoLancamento = System.Enum.GetName(typeof(TipoLancamento), Enum.TipoLancamento.Desconto),
+                DescricaoLancamento = System.Enum.GetName(typeof(DescricaoLancamento), Enum.DescricaoLancamento.PlanoDental),
                 Valor = CalculadorDescontosAuxiliares.CalculaDescontoPlanoDeSaude(funcionario.PossuiDescontoPlanoDental),
             };
         }
@@ -79,9 +80,20 @@ namespace Stone.Api.Contracheque.Domain.Entities
         {
             return new Lancamento
             {
-                TipoLancamento = TipoLancamento.Desconto,
-                DescricaoLancamento = DescricaoLancamento.ValeTransporte,
+                TipoLancamento = System.Enum.GetName(typeof(TipoLancamento), Enum.TipoLancamento.Desconto),
+                DescricaoLancamento = System.Enum.GetName(typeof(DescricaoLancamento), Enum.DescricaoLancamento.ValeTransporte),
                 Valor = CalculadorDescontosAuxiliares.CalculaDescontoValeTransporte(funcionario.SalarioBruto, true),
+            };
+        }
+
+        private Lancamento ObtemLancamentoSalarioLiquido(Funcionario funcionario)
+        {
+            return new Lancamento
+            {
+                TipoLancamento = System.Enum.GetName(typeof(TipoLancamento), Enum.TipoLancamento.Remuneracao),
+                DescricaoLancamento = System.Enum.GetName(typeof(DescricaoLancamento), Enum.DescricaoLancamento.Salario),
+                Valor = CalculadorSalarioLiquido.
+                CalculaSalarioLiquido(funcionario.SalarioBruto, funcionario.PossuiDescontoPlanoDental, funcionario.PossuiDescontoPlanoDeSaude, funcionario.PossuiDescontoValeTransporte),
             };
         }
 
