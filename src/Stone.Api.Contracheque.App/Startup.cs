@@ -12,9 +12,15 @@ namespace Stone.Api.Contracheque.App
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IHostEnvironment hostEnvironment)
         {
-            Configuration = configuration;
+            var buider = new ConfigurationBuilder()
+                .SetBasePath(hostEnvironment.ContentRootPath)
+                .AddJsonFile("appsettings.json", true, true)
+                .AddJsonFile($"appsettings.{hostEnvironment.EnvironmentName}.json", true, true)
+                .AddEnvironmentVariables();
+
+            Configuration = buider.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -22,7 +28,15 @@ namespace Stone.Api.Contracheque.App
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<FuncionarioContext>(opt => opt.UseInMemoryDatabase("tbFuncionario"));
+            services.AddDbContext<FuncionarioContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                opt =>
+                {
+                    opt.EnableRetryOnFailure();
+                })
+            );
+
+            //services.AddDbContext<FuncionarioContext>(opt => opt.UseInMemoryDatabase("tbFuncionario"));
 
             services.AddGlobalExceptionHandlerMiddleware();
 

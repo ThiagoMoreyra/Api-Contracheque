@@ -24,15 +24,15 @@ namespace Stone.Api.Contracheque.Repository.Mappings
 
             builder.Property(p => p.PossuiDescontoPlanoDental)
                 .IsRequired()
-                .HasColumnType("boolean");
+                .HasColumnType("bit");
 
             builder.Property(p => p.PossuiDescontoPlanoDeSaude)
                 .IsRequired()
-                .HasColumnType("boolean");
+                .HasColumnType("bit");
 
             builder.Property(p => p.PossuiDescontoValeTransporte)
                 .IsRequired()
-                .HasColumnType("boolean");
+                .HasColumnType("bit");
 
             builder.OwnsOne(p => p.NomeFuncionario, c =>
             {
