@@ -5,6 +5,7 @@ using Stone.Api.Contracheque.App.Inputs;
 using Stone.Api.Contracheque.Domain.Shared.Interfaces;
 using Stone.Api.Contracheque.Domain.Shared.Notify;
 using System;
+using System.Threading.Tasks;
 
 namespace Stone.Api.Contracheque.App.Controllers
 {
@@ -32,10 +33,10 @@ namespace Stone.Api.Contracheque.App.Controllers
 
         [ValidateModel]
         [HttpPost]
-        public IActionResult Post([FromBody] FuncionarioInput input)
+        public async Task<IActionResult> Post([FromBody] FuncionarioInput input)
         {
             var funcionario = input.ConverteParaFuncionario();
-            _funcionarioService.SalvarFuncionario(funcionario);
+            await _funcionarioService.SalvarFuncionario(funcionario);
             return CustomResponse(funcionario);
         }
     }

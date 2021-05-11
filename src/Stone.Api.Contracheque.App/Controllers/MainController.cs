@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Stone.Api.Contracheque.App.Hypermedia;
 using Stone.Api.Contracheque.Domain.Shared.Notify;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Stone.Api.Contracheque.App.Controllers
@@ -21,7 +23,8 @@ namespace Stone.Api.Contracheque.App.Controllers
                 return Ok(new
                 {
                     success = true,
-                    data = result
+                    data = result,
+                    links = GeraLinks(),
                 });
             }
 
@@ -36,6 +39,26 @@ namespace Stone.Api.Contracheque.App.Controllers
              _notificacao.Valido;        
 
         protected void NotificarErro(string mensagem) =>        
-            _notificacao.AdicionaNotificacao(new Notificacao(mensagem));        
+            _notificacao.AdicionaNotificacao(new Notificacao(mensagem));
+
+        private List<MediaContent> GeraLinks()
+        {
+            return new List<MediaContent> {
+                        new MediaContent
+                        {
+                            Link = FuncionarioLinks.POST, Metodo = "POST", Rel = "criar-funcionario",
+                        },
+
+                        new MediaContent
+                        {
+                            Link = FuncionarioLinks.GETBYID, Metodo = "GET", Rel = "obtem-funcionario",
+                        },
+
+                        new MediaContent
+                        {
+                            Link = ExtratoLinks.GETBYID, Metodo = "GET", Rel = "obtem-extrato",
+                        },
+                    };
+        }
     }
 }

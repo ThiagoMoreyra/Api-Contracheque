@@ -19,15 +19,36 @@ namespace Stone.Api.Contracheque.Domain.Services
         public async Task<Funcionario> ObtemFuncionarioPorId(Guid id) =>
              await _funcionarioRepositorio.ObtemPorId(id);
 
-        public void SalvarFuncionario(Funcionario funcionario)
+        public async Task SalvarFuncionario(Funcionario funcionario)
+        {
+            if (FuncionarioEhValido(funcionario) is false) return;
+
+            if (FunionarioJaExiste(funcionario.Id) is true) return;          
+
+            await _funcionarioRepositorio.Salvar(funcionario);
+        }
+
+        private bool FuncionarioEhValido(Funcionario funcionario)
         {
             if (funcionario.EhValido() is false)
             {
                 _notificador.AdicionaNotificacao(MensagensDeErro.DadosInvalidos);
-                return;
+                return false;
             }
 
-            _funcionarioRepositorio.Salvar(funcionario);
+            return true;
+        }
+
+        private bool FunionarioJaExiste(Guid id)
+        {
+            var funcionarioExistente = _funcionarioRepositorio.ObtemPorId(id);
+            if (funcionarioExistente != null)
+            {
+                _notificador.AdicionaNotificacao(MensagensDeErro.FuncionarioJaExisteBaBase);
+                return false;
+            }
+
+            return true;
         }
     }
 }
