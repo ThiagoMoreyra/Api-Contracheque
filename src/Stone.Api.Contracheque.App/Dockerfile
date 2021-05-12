@@ -11,6 +11,8 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
 WORKDIR /src
 COPY ["src/Stone.Api.Contracheque.App/Stone.Api.Contracheque.App.csproj", "src/Stone.Api.Contracheque.App/"]
+COPY ["src/Stone.Api.Contracheque.Repository/Stone.Api.Contracheque.Repository.csproj", "src/Stone.Api.Contracheque.Repository/"]
+COPY ["src/Stone.Api.Contracheque.Domain/Stone.Api.Contracheque.Domain.csproj", "src/Stone.Api.Contracheque.Domain/"]
 RUN dotnet restore "src/Stone.Api.Contracheque.App/Stone.Api.Contracheque.App.csproj"
 COPY . .
 WORKDIR "/src/src/Stone.Api.Contracheque.App"

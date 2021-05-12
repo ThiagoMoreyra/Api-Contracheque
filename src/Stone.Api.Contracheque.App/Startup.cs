@@ -29,12 +29,8 @@ namespace Stone.Api.Contracheque.App
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<FuncionarioContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
-                opt =>
-                {
-                    opt.EnableRetryOnFailure();
-                })
-            );
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")),
+                ServiceLifetime.Transient);
 
             //services.AddDbContext<FuncionarioContext>(opt => opt.UseInMemoryDatabase("tbFuncionario"));
 
