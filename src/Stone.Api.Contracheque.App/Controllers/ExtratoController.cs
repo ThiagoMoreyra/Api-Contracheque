@@ -25,7 +25,7 @@ namespace Stone.Api.Contracheque.App.Controllers
         public IActionResult Get([FromQuery] Guid id)
         {
             var extrato = _extratoService.ObtemExtrato(id);
-            if (extrato is null) return BadRequest();
+            if (extrato is null || extrato.Lancamentos is null) return NotFound();
             return CustomResponse(extrato.ConverteParaExtratoOutput());
         }
     }

@@ -27,7 +27,7 @@ namespace Stone.Api.Contracheque.App.Controllers
         public IActionResult Get([FromQuery] Guid id)
         {
             var funcionario = _funcionarioService.ObtemFuncionarioPorId(id).Result;
-            if (funcionario is null) return BadRequest();
+            if (funcionario is null) return NotFound();
             return CustomResponse(funcionario.ConverteParaFuncionarioOutput());
         }
 

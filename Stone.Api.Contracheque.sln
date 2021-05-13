@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{E2660003-C77
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stone.Api.Contracheque.App", "src\Stone.Api.Contracheque.App\Stone.Api.Contracheque.App.csproj", "{DD0B6E63-8E1C-4C9B-AC11-D9D350E93623}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{84AC62BA-4F99-42F8-922E-BD6500249F5E}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7220E67A-7173-41A8-BA0A-DCDEE824AA1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +43,10 @@ Global
 		{DD0B6E63-8E1C-4C9B-AC11-D9D350E93623}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD0B6E63-8E1C-4C9B-AC11-D9D350E93623}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD0B6E63-8E1C-4C9B-AC11-D9D350E93623}.Release|Any CPU.Build.0 = Release|Any CPU
-		{84AC62BA-4F99-42F8-922E-BD6500249F5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84AC62BA-4F99-42F8-922E-BD6500249F5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84AC62BA-4F99-42F8-922E-BD6500249F5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84AC62BA-4F99-42F8-922E-BD6500249F5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7220E67A-7173-41A8-BA0A-DCDEE824AA1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7220E67A-7173-41A8-BA0A-DCDEE824AA1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7220E67A-7173-41A8-BA0A-DCDEE824AA1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7220E67A-7173-41A8-BA0A-DCDEE824AA1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

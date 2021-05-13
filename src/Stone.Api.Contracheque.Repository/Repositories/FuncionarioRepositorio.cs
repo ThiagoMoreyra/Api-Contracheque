@@ -16,6 +16,11 @@ namespace Stone.Api.Contracheque.Repository.Repositories
             _context = context;
         }
 
+        public async Task<Funcionario> ObtemPorCpf(string cpf)
+        {
+            return await _context.Funcionarios.AsNoTracking().FirstOrDefaultAsync(p => p.CPF.Documento == cpf);
+        }
+
         public async Task<Funcionario> ObtemPorId(Guid id)
         {
             return await _context.Funcionarios.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);

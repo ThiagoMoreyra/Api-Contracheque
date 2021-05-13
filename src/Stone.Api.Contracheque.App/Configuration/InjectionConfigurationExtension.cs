@@ -28,10 +28,7 @@ namespace Stone.Api.Contracheque.App.Configuration
             services.AddScoped<IFuncionarioRepositorio, FuncionarioRepositorio>();
 
             //Notification
-            services.AddScoped<INotificacao, Notificador>();
-
-            //Mapping
-            services.AddAutoMapper(typeof(DomainToOutputMappingProfile), typeof(InputToDomainMappingProfile));
+            services.AddScoped<INotificacao, Notificador>(); 
         }
     }
 }

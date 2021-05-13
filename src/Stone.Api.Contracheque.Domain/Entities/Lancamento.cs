@@ -24,7 +24,8 @@ namespace Stone.Api.Contracheque.Domain.Entities
             return lancamentos;
         }
 
-        #region [Métodos Privados]
+        #region [Métodos Privados]        
+
 
         private Lancamento ObtemLancamentoFGTS(Funcionario funcionario)
         {

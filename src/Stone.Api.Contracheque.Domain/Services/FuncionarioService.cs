@@ -23,7 +23,7 @@ namespace Stone.Api.Contracheque.Domain.Services
         {
             if (FuncionarioEhValido(funcionario) is false) return;
 
-            if (FunionarioJaExiste(funcionario.Id) is true) return;          
+            if (FuncionarioJaExiste(funcionario).Result is true) return;          
 
             await _funcionarioRepositorio.Salvar(funcionario);
         }
@@ -39,16 +39,16 @@ namespace Stone.Api.Contracheque.Domain.Services
             return true;
         }
 
-        private bool FunionarioJaExiste(Guid id)
+        private async Task<bool> FuncionarioJaExiste(Funcionario funcionario)
         {
-            var funcionarioExistente = _funcionarioRepositorio.ObtemPorId(id);
+            var funcionarioExistente = await _funcionarioRepositorio.ObtemPorCpf(funcionario.CPF.Documento);
             if (funcionarioExistente != null)
             {
                 _notificador.AdicionaNotificacao(MensagensDeErro.FuncionarioJaExisteBaBase);
-                return false;
+                return true;
             }
 
-            return true;
+            return false;
         }
     }
 }
