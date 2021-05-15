@@ -9,8 +9,7 @@
    * [Como usar](#como-usar)
       * [Tecnologias](#Tecnologias)
       * [Scripts](#Scripts)      
-   * [Execução no Docker](#Docker)
-   *   
+   * [Execução no Docker](#Docker)      
 <!--te-->
 
 <h4>* Sobre: </h4>
