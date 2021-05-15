@@ -46,5 +46,5 @@
 
 <h4>* Execução no Docker: </h4>
 
-<p> - Executar o comando <i>docker pull thiagomoreira/stoneapicontrachequeapp:latest</i> para baixar a imagem no Docker Hub</p>
-<p> - Executar o comando <i>docker run -t -i thiagomoreira/stoneapicontrachequeapp:latest</i> para executar a imagem baixada do Docker Hub</p>
+<p> - Executar o comando <i>"docker pull thiagomoreira/stoneapicontrachequeapp:latest"</i> para baixar a imagem no Docker Hub</p>
+<p> - Executar o comando <i>"docker run -t -i thiagomoreira/stoneapicontrachequeapp:latest"</i> para executar a imagem baixada do Docker Hub</p>
