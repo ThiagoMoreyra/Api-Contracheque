@@ -36,8 +36,8 @@
   1 - .NET Core 3.1 <br>
   2 - Sql Server <br>
   3 - Entity FrameWork 3.1.14<br>   
-  4 - XUnit
-  5 - Docker
+  4 - XUnit<br>
+  5 - Docker<br>
 </p>
 
 <h4>* Scripts</h4>
