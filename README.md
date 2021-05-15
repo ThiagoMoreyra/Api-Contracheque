@@ -28,8 +28,8 @@
 
 <p> - Abra o prompt de comando e vá até a pasta do projeto e digite os seguintes comandos:</p>
 
-<b> 1 - dotnet restore </b><br>
-<b> 2 - Vá até a pasta <i>src/Stone.Api.Contracheque.App<i> e digite dotnet run </b><br>
+<b> 1 - dotnet restore. </b><br>
+<b> 2 - Vá até a pasta <i>src/Stone.Api.Contracheque.App<i> e digite dotnet run. </b><br>
   
 <h4>* Tecnologias: </h4>
 <p>
@@ -42,9 +42,9 @@
 
 <h4>* Scripts</h4>
 
-<p> - Na pasta: <i>Stone.Api.Contrecheque\src\Stone.Api.Contracheque.Repository\Script</i> está o script de criação de tabelas</p>
+<p> - Na pasta: <i>Stone.Api.Contrecheque\src\Stone.Api.Contracheque.Repository\Script</i> está o script de criação de tabelas.</p>
 
 <h4>* Execução no Docker: </h4>
 
-<p> - Executar o comando <i>"docker pull thiagomoreira/stoneapicontrachequeapp:latest"</i> para baixar a imagem no Docker Hub</p>
-<p> - Executar o comando <i>"docker run -t -i thiagomoreira/stoneapicontrachequeapp:latest"</i> para executar a imagem baixada do Docker Hub</p>
+<p> - Executar o comando <i>"docker pull thiagomoreira/stoneapicontrachequeapp:latest"</i> para baixar a imagem no Docker Hub.</p>
+<p> - Executar o comando <i>"docker run -t -i thiagomoreira/stoneapicontrachequeapp:latest"</i> para executar a imagem baixada do Docker Hub.</p>
